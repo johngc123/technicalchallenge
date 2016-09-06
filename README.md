@@ -8,6 +8,7 @@ Implement simple calculator using back end and front end technologies. All calcu
 
 ## Getting Started
 ```bash
+npm install
 node server.js
 ```
 http://127.0.0.1:8080/
