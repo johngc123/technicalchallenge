@@ -6,7 +6,7 @@ var calc = require('./calc');
  
 module.exports = function (app) {
 	
-	//home page (accessed at GET http://localhost:8080/api)
+	//home page (accessed at GET http://127.0.0.1:8080)
 	app.get("/", function(req, res){
 		var view = {};
 		view.title = "Calculator";
