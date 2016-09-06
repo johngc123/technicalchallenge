@@ -18,7 +18,9 @@ http://127.0.0.1:8080/
 APIs document(/routes/doc).
 
 Example usage:
+```bash
 curl -H "Content-Type: application/json" -X POST -d '{"number1":10,"number2":5,"operation":"add"}' http://127.0.0.1:8080/api/calculate
+```
 
 <table>
         <thead>
