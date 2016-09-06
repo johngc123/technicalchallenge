@@ -15,7 +15,7 @@ http://127.0.0.1:8080/
 
 ## APIs
 
-APIs document(http://htmlpreview.github.io/?https://github.com/johngc123/technicalchallenge/blob/master/routes/doc/index.html).
+Check APIs document <a href="http://htmlpreview.github.io/?https://github.com/johngc123/technicalchallenge/blob/master/routes/doc/index.html" target="_blank">Here</a>.
 
 Example usage:
 ```bash
