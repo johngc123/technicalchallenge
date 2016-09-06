@@ -1,0 +1,20 @@
+{
+  "name": "calculator-api",
+  "description": "Calculator API",
+  "main": "server.js",
+  "scripts": {
+	"test": "node ./node_modules/mocha/bin/mocha"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "~4.14.0",
+    "pug": "~2.0.0-beta6",
+    "body-parser": "~1.15.2",
+    "morgan": "~1.7.0",
+    "node-cache": "~3.2.1"
+  },
+  "devDependencies": {
+    "mocha": "^3.0.2",
+    "supertest": "^2.0.0"
+  }
+}

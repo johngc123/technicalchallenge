@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Table of Contents
+   ========================================================================== */
+
+/*
+
+    0.  Normalize
+	1.  calculator
+*/
+
+/* ==========================================================================
+   0. normalize
+   ========================================================================== */
+html { 
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%
+}
+body { margin: 0; }
+	
+/* ==========================================================================
+   1. calculator
+   ========================================================================== */
+#wrapper{}
+.container{width:50%; margin:0 auto; min-width:300px; background-color:#202020;border-spacing:1px;
+    border-collapse: separate;}
+.row{ display:table;width:100%;}
+.row .column{ display:table-cell;width:25%; background-color:#ccced0; text-align:center; vertical-align:middle; font-size:30px; height:80px; cursor:pointer;}
+.row .column.operation, .row .column.equal{ background-color:#f97e0e;}
+.row .column.operation.selected{background-color:#f6b36b;}
+.row .column.reset{width:25%;background-color:#202020;color:#fff; padding:30px 10px;}
+.row .column.display{width:75%;background-color:#202020; color:#fff; text-align:right; font-size:50px; padding:30px 20px;}
+
+@media (max-width: 767px) {
+	.row .column.display{ font-size:28px;}
+}
