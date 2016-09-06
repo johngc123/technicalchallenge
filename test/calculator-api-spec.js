@@ -4,7 +4,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var calc = require('../routes/calc.js');
 
-describe('request.agent(app)', function(){
+describe('calculator', function(){
   var app = express();
   app.use(bodyParser.json());
 

@@ -14,43 +14,61 @@ http://127.0.0.1:8080/
 
 ## APIs
 
-APIs document(./routes/doc).
+APIs document(/routes/doc).
 
-/**
- * @api {post} /api/calculate
- * @apiVersion 0.1.0
- * @apiName Calculate
- * @apiGroup Calculator
- * @apiPermission all
- *
- * @apiDescription a very simple calculator here
- *
- * @apiParam {Float} number1     Mandatory first number
- * @apiParam {Float} number2     Mandatory second number.
- * @apiParam {string="add","subtract","divide","multiply"} operation     Mandatory Operation.
- *
- * @apiExample Example usage:
- * curl -H "Content-Type: application/json" -X POST -d '{"number1":10,"number2":5,"operation":"add"}' http://127.0.0.1:8080/api/calculate
- *
- * @apiSuccess {Number}   result      the calculated result
- * @apiSuccess {Object[]} links       List of specified actions (Array of Objects).
- *
- * @apiSuccessExample {json} Success-Response:
- *     HTTP/1.1 200 OK
- *     {
- *       "result": 15,
- *       "links": [{"rel":"calculate","method":"POST","href":"/api/calculate"}]
- *     }
- *
- * @apiError InvalidInput One of the request inputs is not valid.
- *
- * @apiErrorExample Response (example):
- *     HTTP/1.1 400 Bad Request 
- *     {
- *       "error": "One of the request inputs is not valid."
- *     }
- */
+Example usage:
+curl -H "Content-Type: application/json" -X POST -d '{"number1":10,"number2":5,"operation":"add"}' http://127.0.0.1:8080/api/calculate
 
+<table>
+        <thead>
+          <tr>
+          <th style="width: 30%">Field</th>
+            <th style="width: 10%">Type</th>
+            <th style="width: 60%">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code">number1</td>
+              <td>
+                Float
+              </td>
+            <td>
+            <p>Mandatory first number</p>
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">number2</td>
+              <td>
+                Float
+              </td>
+            <td>
+            <p>Mandatory second number.</p>
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">operation</td>
+              <td>
+                string
+              </td>
+            <td>
+            <p>Mandatory Operation.</p>
+            
+            
+            <p class="type-size">Allowed values:
+                <code>"add"</code>, 
+                <code>"subtract"</code>, 
+                <code>"divide"</code>, 
+                <code>"multiply"</code>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
 ## Tests
 

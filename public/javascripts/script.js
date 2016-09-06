@@ -24,6 +24,9 @@
 				$('.column.operation').removeClass('selected');
 				tocalculate = true;
 			}
+			if($('.column.equal.selected').length){
+				$('.column.reset').trigger('click');
+			}
 			if($('.display').text()=='0'){
 				$('.display').text('');
 			}
@@ -40,6 +43,9 @@
 				$('.column.operation').removeClass('selected');
 				tocalculate = true;
 			}
+			if($('.column.equal.selected').length){
+				$('.column.reset').trigger('click');
+			}
 			//add 0 before decimal sign if no number has been entered
 			if(!$('.display').text()){
 				$('.display').append('0.');
@@ -55,6 +61,7 @@
 			//highlight current operation sign
 			$('.column.operation').removeClass('selected');
 			$(this).addClass('selected');
+			$('.column.equal').removeClass('selected');
 			
 			//calculate the inputs
 			if(tocalculate){
@@ -80,27 +87,29 @@
 			tocalculate = false;
 			objcal.number2 = parseFloat($('.display').text());
 			$('.column.operation').removeClass('selected');
+			$('.column.equal').addClass('selected');
 			//call the api to calculate and return the result
 			objcal.calculate(function(rst){
 				callback(rst);
 			});
 		})
 		
-		//events binded to reset button
+		//events binded to reset button -- reset all
 		$('.column.reset').click(function(){
 			//rest all
 			$('.display').text('0');
+			$('.column.operation').removeClass('selected');
+			$('.column.equal').removeClass('selected');
 			objcal.operation='';
 			objcal.number1=0;
 			objcal.number2=0;
+			tocalculate = false;
 		})
 		
-		//function to deal with return result
+		//callback function to deal with return result
 		var callback = function(rst, func){
 			//display the result
-			if(rst.errorcode){
-				alert("err! errorcoe:"+rst.errorcode);
-			}else{
+			if(rst){
 				$('.display').text(rst.result);	
 				objcal.number1 = parseFloat(rst.result);
 				
